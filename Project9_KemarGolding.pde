@@ -15,7 +15,7 @@ void settings() {
 }
 
 void setup() {
-  d = new Dog(random(20, 480), random(20, 480), random(20, 480), random(20, 480), random(20, 480), random(20, 480));
+  d = new Dog();
   //noLoop();
 }
 
@@ -25,7 +25,7 @@ void draw() {
   for(int i = 0; i < 3; i++) {
     d.drawDog();
   }
-  //d.example();
+  d.example();
   
   
 }

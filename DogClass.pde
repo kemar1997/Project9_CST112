@@ -1,7 +1,7 @@
 class Dog {
   // Instantiating the initial location varibles for the object
-  float x1;
-  float y1;
+  float x;
+  float y;
   float x2;
   float y2;
   float x3;
@@ -17,22 +17,18 @@ class Dog {
 /*-----------------------------------------------------------------------------------------------*/
 
   // Constructor
-  Dog (float tempLocX1, float tempLocY1, float tempLocX2, float tempLocY2, float tempLocX3, float tempLocY3) {
-    x1 = tempLocX1;
-    y1 = tempLocY1;
-    x2 = tempLocX2;
-    y2 = tempLocY2;
-    x3 = tempLocX3;
-    y3 = tempLocY3;
+  Dog () {
+    x = random(width);
+    y = random(height);
     
   }
   
   void example() {
-    println(x1, y1, x2, y2, x3, y3);
+    println(x, y);
   }
   
   void drawDog() {
     fill(0);
-    triangle(x1, y1, x2, y2, x3, y3);
+    triangle(x+20, y+30, x-40, y+30, x-10, y-40);
   }
 }
