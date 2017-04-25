@@ -4,28 +4,38 @@
 // Email: kkemargolding@gmail.com
 // Description: Created a geometric dog from various shapes and sizes bounces around the output window and changes to random colors.
 
-// Initialize the Dog Class
-Dog d;
-
-// Object Array
-//Dog[] d = new Dog[2];
+// Instantiate an array of one Kirby object for now
+Kirby[] myKirby = new Kirby[6];
 
 void settings() {
-  size(500, 500);
+  size(500, 500, P2D);
 }
 
 void setup() {
-  d = new Dog();
   //noLoop();
+  for(int i = 0; i < myKirby.length; i++) {
+    myKirby[i] = new Kirby();
+  }
 }
 
 void draw() {
   drawBg();
-  //d.drawDog();
-  for(int i = 0; i < 3; i++) {
-    d.drawDog();
+  
+  for (Kirby k: myKirby) {
+    k.display();
+    k.moveKirby();
+    k.bounceKirby();
+    k.randomEyeColor();
   }
-  d.example();
-  
-  
+}
+
+void mousePressed()  {
+  Kirby kirby = new Kirby();
+  myKirby = ( Kirby[] ) append(myKirby, kirby);
+}
+
+void keyPressed() {
+  if (myKirby.length > 0) {
+    myKirby = ( Kirby[] ) shorten(myKirby);
+  }
 }
