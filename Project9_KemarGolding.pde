@@ -29,6 +29,10 @@ void draw() {
   }
 }
 
+/*-------------------------------------------------------------------*/
+
+// Using the append and shorten functions to control the appearing and disappearing of the objects
+
 void mousePressed()  {
   Kirby kirby = new Kirby();
   myKirby = ( Kirby[] ) append(myKirby, kirby);
